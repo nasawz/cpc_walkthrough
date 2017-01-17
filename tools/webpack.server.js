@@ -46,6 +46,6 @@ app.listen(port, function (err) {
         console.error(err)
     }
     else {
-        console.info('Listening on port %s. \nOpen up http://localhost:%s/ in your browser.', port, port)
+        console.info('\nListening on port %s. \nOpen up http://localhost:%s/ in your browser.', port, port)
     }
 })
