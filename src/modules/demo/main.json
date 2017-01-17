@@ -1,0 +1,40 @@
+{
+    "dev": {
+        "title": "demo",
+        "filename": "index",
+        "chunks": {
+            "vendor": {
+                "attr": {
+                    "js": "",
+                    "css": ""
+                }
+            },
+            "demo": {
+                "attr": {
+                    "js": "",
+                    "css": ""
+                }
+            }
+        }
+    },
+    "pub": {
+        "title": "demo",
+        "filename": "index",
+        "chunks": {
+            "libs/react": null,
+            "libs/react-dom": null,
+            "vendor": {
+                "attr": {
+                    "js": "",
+                    "css": ""
+                }
+            },
+            "demo": {
+                "attr": {
+                    "js": "",
+                    "css": ""
+                }
+            }
+        }
+    }
+}
