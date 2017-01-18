@@ -1,0 +1,37 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2,
+        "no-console": 2, //禁止使用console
+        "no-alert": 2, //alert
+        "indent": [
+            2,
+            4
+        ], //缩进风格
+        "quotes": [
+            1,
+            "single"
+        ], //引号类型
+        "semi": [
+            2,
+            "never"
+        ] //禁止分号结尾
+    }
+}

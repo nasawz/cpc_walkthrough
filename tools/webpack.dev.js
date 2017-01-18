@@ -28,14 +28,20 @@ var devConfig = {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
                 loader: 'babel',
-            }, {
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                loader: 'awesome-typescript-loader',
+            },
+            {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract('css!postcss!less', {
                     publicPath: '../'
                 })
             }, {
                 test: /\.css/,
-                loader: ExtractTextPlugin.extract('style!css!postcss', {
+                loader: ExtractTextPlugin.extract('style', 'css!postcss', {
                     publicPath: '../'
                 })
             }, {
@@ -62,8 +68,8 @@ var devConfig = {
         ]
     },
     resolve: {
-        moduledirectories: ['node_modules', configWebpack.path.src],
-        extensions: ['', '.js', '.jsx', '.es6', 'css', 'less', 'png', 'jpg', 'jpeg', 'ico'],
+        modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
+        extensions: ['', '.web.js', '.js', '.json', '.jsx', '.ts', '.tsx', '.es6', 'css', 'less', 'png', 'jpg', 'jpeg', 'ico'],
         alias: {
             'redux': 'redux/dist/redux',
             'react-redux': 'react-redux/dist/react-redux',

@@ -39,7 +39,7 @@ var prodConfig = {
                 })
             }, {
                 test: /\.css/,
-                loader: ExtractTextPlugin.extract('style!css!postcss', {
+                loader: ExtractTextPlugin.extract('style', 'css!postcss', {
                     publicPath: '../../'
                 })
             }, {
@@ -68,9 +68,8 @@ var prodConfig = {
     },
     resolve: {
         moduledirectories: ['node_modules', configWebpack.path.src],
-        extensions: ['', '.js', '.jsx', '.es6', 'css', 'scss', 'png', 'jpg', 'jpeg', 'ico'],
+        extensions: ['', '.web.js', '.js', '.json', '.jsx', '.ts', '.tsx', '.es6', 'css', 'less', 'png', 'jpg', 'jpeg', 'ico'],
         alias: {
-            // 使用压缩版本redux
             'redux': 'redux/dist/redux.min',
             'react-redux': 'react-redux/dist/react-redux',
             'safe': path.join(configWebpack.path.src, '/modules/common/safe.jsx'),
@@ -94,8 +93,8 @@ var prodConfig = {
                 to: 'libs/'
             }
         ], {
-                namePattern: '[name]-' + configWebpack.contenthash + '.js'
-            }),
+            namePattern: '[name]-' + configWebpack.contenthash + '.js'
+        }),
         new CopyWebpackPlugin([
             {
                 from: configWebpack.path.src + '/res/',
@@ -125,7 +124,6 @@ var prodConfig = {
         }),
         new ExtractTextPlugin(pkg.version + '/css/[name]-' + configWebpack.contenthash + '.css', {
             filenamefilter: function (filename) {
-                console.log(filename);
                 return filename.replace('/js', '')
             },
             allChunks: true,
