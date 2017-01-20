@@ -9,6 +9,11 @@
     <meta content="telephone=no, email=no" name="format-detection" />
     <title>{title}</title>
     <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        if (!window.Promise) {
+            document.writeln('<script src="lib/es6-promise.js"' + '>' + '<' + '/' + 'script>');
+        }
+    </script>
 </head>
 
 <body>

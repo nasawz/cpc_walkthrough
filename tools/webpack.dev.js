@@ -87,9 +87,7 @@ var devConfig = {
             {
                 from: configWebpack.path.src + '/libs/',
                 to: 'libs/'
-            }
-        ]),
-        new CopyWebpackPlugin([
+            },
             {
                 from: configWebpack.path.src + '/res/',
                 to: 'res/'

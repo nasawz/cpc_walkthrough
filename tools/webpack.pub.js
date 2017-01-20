@@ -80,7 +80,7 @@ var prodConfig = {
     },
     plugins: [
         // remove previous pub folder
-        new Clean(['dist'], { root: path.resolve() }),
+        new Clean(['www'], { root: path.resolve() }),
         // inject process.env.NODE_ENV so that it will recognize if (process.env.NODE_ENV === '__PROD__')
         new webpack.DefinePlugin({
             'process.env': {
@@ -91,12 +91,7 @@ var prodConfig = {
             {
                 from: configWebpack.path.src + '/libs/',
                 to: 'libs/'
-            }
-        ], {
-            namePattern: '[name]-' + configWebpack.contenthash + '.js'
-        }),
-        new CopyWebpackPlugin([
-            {
+            }, {
                 from: configWebpack.path.src + '/res/',
                 to: 'res/'
             }

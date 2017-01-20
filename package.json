@@ -11,7 +11,9 @@
     "lint": "eslint 'src/modules/**/*.@(js|jsx)' ",
     "pretest": "npm run lint",
     "test": "mocha --compilers js:babel-core/register --recursive",
-    "deploy-vhome": "npm run pub && node ./tools/deploy.js"
+    "deploy-vhome": "npm run pub && node ./tools/deploy.js",
+    "ios": "npm run pub && cordova run ios",
+    "android": "npm run pub && cordova run android"
   },
   "author": "nasa.wang",
   "license": "MIT",
